@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Resume Website
+
+A modern, dark-themed resume website built with Next.js, React, and Tailwind CSS.
+
+## Features
+
+- 🎨 Beautiful dark theme with gradient accents
+- 📱 Fully responsive design
+- ⚡ Static site generation for fast loading
+- 🚀 Automatic deployment to GitHub Pages
 
 ## Getting Started
 
-First, run the development server:
+### Development
+
+First, install dependencies:
+
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To build the static site:
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+The static files will be exported to the `out` directory.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Customization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Edit `app/page.tsx` to customize:
+- Your name and title
+- Contact information (email, GitHub, LinkedIn)
+- Work experience
+- Education
+- Skills
+- About section
 
-## Deploy on Vercel
+## Deployment to GitHub Pages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is configured for automatic deployment to GitHub Pages:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Enable GitHub Pages in your repository:**
+   - Go to your repository settings
+   - Navigate to "Pages" in the left sidebar
+   - Under "Source", select "GitHub Actions"
+
+2. **If your repository is not at the root (e.g., `username.github.io/repo-name`):**
+   - Uncomment and update the `basePath` in `next.config.ts`:
+   ```typescript
+   basePath: '/your-repo-name',
+   ```
+
+3. **Push to main branch:**
+   - The GitHub Actions workflow will automatically build and deploy your site
+   - Your site will be available at `https://yourusername.github.io/repo-name/`
+
+## Project Structure
+
+```
+├── app/
+│   ├── page.tsx      # Main resume page
+│   ├── layout.tsx    # Root layout
+│   └── globals.css   # Global styles
+├── .github/
+│   └── workflows/
+│       └── deploy.yml # GitHub Pages deployment workflow
+└── next.config.ts     # Next.js configuration
+```
+
+## Technologies
+
+- [Next.js](https://nextjs.org) - React framework
+- [React](https://react.dev) - UI library
+- [Tailwind CSS](https://tailwindcss.com) - Styling
+- [TypeScript](https://www.typescriptlang.org) - Type safety
